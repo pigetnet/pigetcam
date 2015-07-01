@@ -1,0 +1,7 @@
+{
+    "require": {
+        "components/bootstrap": "^3.3",
+        "nostalgiaz/bootstrap-switch": "^3.3",
+        "phpmailer/phpmailer": "^5.2"
+    }
+}
