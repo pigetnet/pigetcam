@@ -24,6 +24,7 @@ if ($check_property) {
     <td><?php echo $control->name ?></td>
         <td>    
             <input data-id="<?php echo $key ?>" 
+                        id="<?php echo $key."_controls" ?>"
                         class="switches" 
                         type="checkbox" 
                         <? if ($processes[$control->name]){ echo "checked";}?>>

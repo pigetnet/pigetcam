@@ -1,0 +1,5 @@
+#!/bin/bash
+. /opt/piget/core/install/extendPath
+cameraSavePicture "/tmp/tosend.jpg"
+emailSend --Body "$1" --File "/tmp/tosend.jpg"
+rm "/tmp/tosend.jpg"

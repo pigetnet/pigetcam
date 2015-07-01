@@ -15,8 +15,10 @@ $(".switches").on("switchChange.bootstrapSwitch", function(event, state) {
     } else {
         url = url + "=stop";
     }
-    
+    //$("#"+control_id+"_controls").bootstrapSwitch('toggleDisabled');
+     //$("#"+control_id).bootstrapSwitch('toggleDisabled');
      sendRequest(url);
+     //$("#"+control_id+"_controls").bootstrapSwitch('toggleDisabled');
   
 
 });
