@@ -1,5 +1,6 @@
 #!/bin/bash
 . downloadModule nginx
 . downloadModule camera
+. downloadModule email
 nginxInstall
-nginxDir /opt/pigetcam
+nginxDir /opt/piget/pigetcam/www

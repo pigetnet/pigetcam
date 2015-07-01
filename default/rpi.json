@@ -1,0 +1,18 @@
+{
+  "name": "Raspberry Pi Controls",
+  "type": "buttons",
+  "buttons": [
+    {
+    "icon": "glyphicon glyphicon-repeat",
+    "color": "warning",
+    "action": "reboot"
+    },
+    {
+    "icon": "glyphicon glyphicon-off",
+    "color": "danger",
+    "action": "halt"
+    }
+  ],
+   "reboot":"/sbin/reboot",
+  "halt":"/sbin/halt"
+}

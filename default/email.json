@@ -1,0 +1,12 @@
+{
+  "name": "Send Picture to email",
+  "type": "buttons",
+  "buttons": [
+    {
+   	 "icon": "glyphicon glyphicon-envelope",
+    	"color": "success",
+    	"action": "sendPicture"
+    }
+  ],
+   "sendPicture":"/opt/piget/pigetcam/pigetcamSendPicture"
+ }
