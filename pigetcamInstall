@@ -4,3 +4,10 @@
 . downloadModule email
 nginxInstall
 nginxDir /opt/piget/pigetcam/www
+#Add webserver
+. downloadModule nginx
+. downloadModule pigetcam
+nginxInstall
+nginxDir "/opt/piget/pigetcam"
+#nginxAuthorize
+#nginxHTTPS
