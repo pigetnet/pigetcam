@@ -1,12 +1,8 @@
 #!/bin/bash
-. downloadModule nginx
-. downloadModule camera
-. downloadModule email
-nginxInstall
-nginxDir /opt/piget/pigetcam/www
 #Add webserver
 . downloadModule nginx
 nginxInstall
-nginxDir "/opt/piget/pigetcam"
+nginxDir "/opt/piget/pigetcam/www"
+cp -R /opt/piget/pigetcam/default /opt/user/config/pigetcam
 #nginxAuthorize
 #nginxHTTPS
