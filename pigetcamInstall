@@ -24,4 +24,6 @@ nginxAuthorize /opt/piget/pigetcam/pigetcamSendPicture
 messagebox "Authorize Camera Stream"
 nginxAuthorize /opt/piget/camera/cameraStreamStart
 nginxAuthorize /opt/piget/camera/cameraStreamStop
+
+messagebox "HTTPS activate"
 #nginxHTTPS
