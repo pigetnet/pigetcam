@@ -1,7 +1,8 @@
 #!/bin/bash
 #Add webserver
 description "Install pigetcam"
-. downloadModule nginx
+downloadModule nginx
+. /opt/piget/core/install/extendPath
 nginxInstall
 nginxDir "/opt/piget/pigetcam/www"
 installer php5-curl
