@@ -7,7 +7,7 @@ if (file_exists("../appSettings.inc.php")){
 
 function grab_image($url)
 {
-    header('Content-type: image/jpeg');
+ //   header('Content-type: image/jpeg');
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
