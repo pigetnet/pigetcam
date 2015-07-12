@@ -3,6 +3,7 @@
 . downloadModule nginx
 nginxInstall
 nginxDir "/opt/piget/pigetcam/www"
+installer php5-curl
 cp -R /opt/piget/pigetcam/default /opt/user/config/pigetcam
 #nginxAuthorize
 #nginxHTTPS
