@@ -1,9 +1,26 @@
 #!/bin/bash
 #Add webserver
+description "Install pigetcam"
 . downloadModule nginx
 nginxInstall
 nginxDir "/opt/piget/pigetcam/www"
 installer php5-curl
+
+messagebox "Copy configurations"
 cp -R /opt/piget/pigetcam/default /opt/user/config/pigetcam
-#nginxAuthorize
+
+messagebox "Authorize reboot/halt"
+nginxAuthorize /usr/sbin/reboot
+nginxAuthorize /usr/sbin/halt
+
+messagebox "Authorize pilight controls"
+nginxAuthorize /opt/piget/pilightCommand/pilightCommandStart
+nginxAuthorize /opt/piget/pilightCommand/pilightCommandStop
+
+messagebox "Authorize email"
+nginxAuthorize /opt/piget/pigetcam/pigetcamSendPicture
+
+messagebox "Authorize Camera Stream"
+nginxAuthorize /opt/piget/camera/cameraStreamStart
+nginxAuthorize /opt/piget/camera/cameraStreamStop
 #nginxHTTPS
