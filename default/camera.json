@@ -1,7 +1,7 @@
 {
    "name" : "Camera Stream",
-   "start" : "/opt/piget/camera/cameraStreamStart",
+   "start" : "/do/mjpeg-streamer/streamStart",
    "type" : "switch",
    "state" : "mjpg-streamer-experimental",
-   "stop" : "/opt/piget/camera/cameraStreamStop"
+   "stop" : "/do/mjpeg-streamer/streamStop"
 }

@@ -8,5 +8,5 @@
     	"action": "sendPicture"
     }
   ],
-   "sendPicture":"/opt/piget/pigetcam/pigetcamSendPicture"
+   "sendPicture":"/do/pigetcam/sendPicture"
  }

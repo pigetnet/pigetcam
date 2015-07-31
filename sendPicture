@@ -1,5 +1,5 @@
 #!/bin/bash
 /show/listecho "Send picture to default email" $OK
-/opt/piget/camera/savePicture "/tmp/tosend.jpg"
+/opt/piget/mjpeg-streamer/savePicture "/tmp/tosend.jpg"
 /opt/piget/email/send --Body "$1" --File "/tmp/tosend.jpg"
 rm "/tmp/tosend.jpg"

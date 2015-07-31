@@ -1,7 +1,7 @@
 {
    "name" : "Radio (pilight)",
-   "start" : "/opt/piget/pilightCommand/pilightCommandStart",
+   "start" : "/do/pilightCommand/start",
    "state" : "pilightCommand",
-   "stop" : "/opt/piget/pilightCommand/pilightCommandStop",
+   "stop" : "/do/pilightCommand/stop",
    "type" : "switch"
 }
