@@ -1,0 +1,6 @@
+#!/bin/bash
+name=$1
+/show/listecho "Send picture to default email" $OK
+/do/mjpeg-streamer/savePicture "/tmp/tosend.jpg"
+/do/dropbox/upload "/tmp/tosend.jpg" "$name"
+rm "/tmp/tosend.jpg"
