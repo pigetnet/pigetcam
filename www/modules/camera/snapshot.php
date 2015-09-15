@@ -6,12 +6,13 @@ if (file_exists("../appSettings.inc.php")) {
 }
 
 function grab_image($url) {
-    header('Content-type: image/jpeg');
+    //header('Content-type: image/jpeg');
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-    $conf_file = "camera/camera";
+    $conf_file = "camera/password";
+    //echo DIR.$conf_file.".json";
     if (file_exists(DIR.$conf_file.".json")) {
         $credentials_json = new JsonSettings($conf_file);
         if ($credentials_json->settings) {
