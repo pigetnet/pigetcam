@@ -1,5 +1,10 @@
 #!/bin/bash
 /show/listecho "Send picture to default email" $OK
 /opt/piget/mjpeg-streamer/savePicture "/tmp/tosend.jpg"
-/opt/piget/email/send --Body "$1" --File "/tmp/tosend.jpg"
+
+if [ $# -eq 1 ];then
+	/opt/piget/email/send --Body "$1" --File "/tmp/tosend.jpg"
+else
+	/opt/piget/email/send --Body "Picture saved" --File "/tmp/tosend.jpg"
+fi
 rm "/tmp/tosend.jpg"

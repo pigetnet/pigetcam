@@ -26,7 +26,7 @@ fi
 /do/nginx/authorize "/do/pigetcam/sendPicture"
 
 /show/listecho "Authorize Camera Stream" $OK
-/do/nginx/authorize "/opt/piget/mjpeg-streamer/streamStart"
-/do/nginx/authorize "/opt/piget/mjpeg-streamer/streamStop"
+/do/nginx/authorize "/opt/piget/mjpeg-streamer/start"
+/do/nginx/authorize "/opt/piget/mjpeg-streamer/stop"
 
 /system/restart nginx
