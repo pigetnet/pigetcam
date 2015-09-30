@@ -1,35 +1,57 @@
 <?php
 $check_property = true;
 if (!isset($control->name)) {
-    echo "<code>ERR name not defined</code>";
+    echo "<code>ERR name not defined in $control->file.json</code>";
     $check_property = false;
 }
 
-if (!isset($control->state)) {
-    echo "<code>ERR state not defined</code>";
+if (!isset($control->state) && !isset($control->process)) {
+    echo "<code>ERR state / process not defined</code>";
     $check_property = false;
 }
 
 if ($check_property) {
-    exec("pgrep -fl $control->state", $pids[$control->state]);
-    array_pop($pids[$control->state]);
+    if (isset($control->process)) {
+        exec("pgrep -fl $control->process", $pids[$control->process]);
+        array_pop($pids[$control->process]);
 
-    if (empty($pids[$control->state])) {
-        $processes[$control->name] = false;
-    } else {
-        $processes[$control->name] = true;
+        if (empty($pids[$control->process])) {
+            $processes[$control->file] = false;
+        } else {
+            $processes[$control->file] = true;
+        }
     }
+
+    if (isset($control->state)) {
+        if (file_exists("/user/state/$control->state/state")) {
+            $file_tmp = file_get_contents("/user/state/$control->state/state");
+            $file_tmp = trim($file_tmp);
+            $processes[$control->file] = $file_tmp;
+            unset($file_tmp);
+        }
+        if (file_exists("/user/state/$control->state/description")) {
+            $file_tmp = file_get_contents("/user/state/$control->state/description");
+            $control->description = $file_tmp;
+            unset($file_tmp);
+        }
+    }
+
 ?>
-<tr>
-    <td><?php echo $control->name ?></td>
+    <tr>
+        <td>
+            <?php
+            echo $control->name;
+            if (isset($control->description)) { echo "<code>$control->description</code>"; }
+            ?>
+        </td>
         <td>    
             <input data-id="<?php echo $key ?>" 
-                        id="<?php echo $key."_controls" ?>"
-                        class="switches" 
-                        type="checkbox" 
-                        <? if ($processes[$control->name]){ echo "checked";}?>>
+            id="<?php echo $key."_controls" ?>"
+            class="switches" 
+            type="checkbox" 
+            <? if ($processes[$control->file]){ echo "checked";}?>>
         </td>
-</tr>
-<?php
+    </tr>
+    <?php
 }
 ?>

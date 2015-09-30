@@ -1,4 +1,5 @@
 <?php
+
 class JsonSettings
 {
     public $settings = false;
@@ -17,6 +18,7 @@ class JsonSettings
                 }
             }
         }
+
     }
 
     private static function fileToJson($file)
@@ -24,6 +26,7 @@ class JsonSettings
         if (file_exists($file)) {
             $json_raw = file_get_contents($file);
             $setting = json_decode($json_raw);
+            $setting->file = basename($file, ".json");
             return $setting;
         } else {
             return false;
