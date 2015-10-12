@@ -3,6 +3,7 @@
 /show/description "Install pigetcam"
 /system/downloadModule nginx
 /do/nginx/install
+/do/nginx/debug
 /do/nginx/dir "/opt/piget/pigetcam/www"
 /system/install php5-curl
 

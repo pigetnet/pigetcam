@@ -2,6 +2,6 @@
    "name" : "Camera Stream",
    "start" : "/do/mjpeg-streamer/start",
    "type" : "switch",
-   "state" : "mjpg-streamer-experimental",
+   "process" : "mjpg-streamer-experimental",
    "stop" : "/do/mjpeg-streamer/stop"
 }
