@@ -15,6 +15,8 @@ else
   cp -v /opt/piget/pigetcam/default/* /opt/user/config/pigetcam
 fi
 
+chown -R www-data:www-data /opt/user/config/pigetcam
+
 /show/listecho "Authorize reboot/halt" $OK
 /do/nginx/authorize "/sbin/reboot"
 /do/nginx/authorize "/sbin/halt"

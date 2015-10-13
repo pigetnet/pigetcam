@@ -1,7 +1,0 @@
-{
-   "name" : "Radio (pilight)",
-   "start" : "/do/pilightCommand/start",
-   "process" : "pilightCommand",
-   "stop" : "/do/pilightCommand/stop",
-   "type" : "switch"
-}
